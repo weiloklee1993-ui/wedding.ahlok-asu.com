@@ -12,7 +12,9 @@
 .giftLabel{font-size:12px;letter-spacing:.18em;color:#966e4a;margin-bottom:6px}.giftRow{display:flex;align-items:center;justify-content:space-between;gap:12px}.giftRow strong{font-family:var(--s);font-size:clamp(21px,6vw,31px);letter-spacing:.06em;color:#471711;word-break:break-word}.giftRow:nth-of-type(2) strong{font-size:23px}.copyBtn{flex:0 0 auto;border:1px solid #b88b46;background:#8a0b12;color:#f8dda0;border-radius:999px;padding:9px 13px;box-shadow:0 4px 12px #61101622}.copyBtn.copied{background:#b88b46;color:#fff}.giftLine{height:1px;background:linear-gradient(90deg,transparent,#c89b52,transparent);margin:20px 0}.giftThanks{font:24px var(--b);color:#8a0b12;margin-top:22px}
 </style></head><body>
 <section class="cover" id="cover"><img class="poster" src="cover-poster.jpg"><video id="cv" autoplay muted loop playsinline preload="auto" poster="cover-poster.jpg"><source src="cover-animation.mp4" type="video/mp4"></video><div class="shade"></div><div class="invite"><div class="mini">敬 邀</div><div class="guest" id="guest">亲爱的宾客</div><div class="welcome">莅临我们的婚礼</div><button class="open" id="openInvitationBtn"><i></i>打开请帖 ›</button></div></section>
-<button class="music" id="mb">♫</button><audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+<button class="music" id="mb" aria-label="音乐">♫</button><div id="ytWrap" aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden">
+<div id="ytPlayer"></div></div>
+<script src="https://www.youtube.com/iframe_api"></script>
 <section class="screen hero"><div><div class="ey">良辰已定 · 吉日待君</div><h1>Ahlok<br><small>囍</small><br>Asu</h1><div class="date">11 · 10 · 2026</div></div></section>
 <section class="paper"><div class="sec reveal"><div class="seal"><span>喜</span></div><div class="ey" style="color:#8a5b3e;margin-top:22px">WE FOUND LOVE</div><h2>我们的婚礼</h2><p class="sub">从相遇，到相知，再到决定一起走过往后的岁月。<br>我们想把这一天，与你分享。</p><img class="feature" src="photo2.jpeg" loading="lazy"><div class="quote">谨以白头之约，书向鸿笺<br>好将红叶之盟，载明鸳谱</div></div></section>
 <section class="red"><div class="sec reveal"><div class="ey">SAVE THE DATE</div><h2>距离我们的喜宴</h2><div class="count"><div><b id="d">00</b><span>天</span></div><div><b id="h">00</b><span>小时</span></div><div><b id="m">00</b><span>分钟</span></div><div><b id="s">00</b><span>秒</span></div></div><div class="card"><h3>婚宴</h3><p><b>2026年10月11日</b><br>13:00 — 15:00</p><p><b>Gedung Paragon</b><br>Jalan Tani Gg Cisadane, Singkawang<br>Depan Singkawang Grand Mall</p><a class="gold" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gedung%20Paragon%20Jalan%20Tani%20Gg%20Cisadane%20Singkawang">打开地图</a></div></div></section>
@@ -25,7 +27,7 @@
     <h2>婚礼礼金</h2>
     <p class="giftIntro">您的出席就是我们最珍贵的礼物<br>若您也想以礼金的方式为我们的新生活送上祝福<br>我们将由衷感激</p>
     <div class="giftCard">
-      <div class="giftBank">BCA</div>
+      <div class="giftBank">BRI</div>
       <div class="giftLabel">银行账号</div>
       <div class="giftRow"><strong id="acct">0089 0108 1493 507</strong><button type="button" class="copyBtn" data-copy="008901081493507">复制</button></div>
       <div class="giftLine"></div>
@@ -44,28 +46,32 @@ if(n){guestEl.textContent=n;rnEl.value=n}
 for(let i=0;i<15;i++){let p=document.createElement("i");p.className="petal";p.textContent=Math.random()>.5?"❀":"✦";p.style.left=Math.random()*100+"vw";p.style.setProperty("--x",(Math.random()*140-70)+"px");p.style.animationDuration=(7+Math.random()*6)+"s";p.style.animationDelay=(-Math.random()*8)+"s";document.body.appendChild(p)}
 const coverEl=document.getElementById("cover");
 const openInvitationBtn=document.getElementById("openInvitationBtn");
-const musicEl=document.getElementById("music");
 const musicBtn=document.getElementById("mb");
-// 封面出现时立即尝试播放；若 iPhone/Safari 阻止自动有声播放，
-// 用户第一次触碰页面时立即启动音乐，不必等到“打开请帖”。
-function startMusic(){
-  if(musicEl && musicEl.paused){
-    musicEl.volume=0.8;
-    musicEl.play().catch(function(){});
-  }
+let ytPlayer=null, ytReady=false, wantMusic=false, musicPlaying=false;
+window.onYouTubeIframeAPIReady=function(){
+  ytPlayer=new YT.Player("ytPlayer",{
+    height:"1",width:"1",videoId:"AeSW8rBzbRo",
+    playerVars:{playsinline:1,controls:0,rel:0,loop:1,playlist:"AeSW8rBzbRo"},
+    events:{onReady:function(){ytReady=true;if(wantMusic) playMusic();},
+            onStateChange:function(e){musicPlaying=(e.data===YT.PlayerState.PLAYING);musicBtn.textContent=musicPlaying?"♪":"♫";}}
+  });
+};
+function playMusic(){
+  wantMusic=true;
+  if(ytReady&&ytPlayer){try{ytPlayer.unMute();ytPlayer.setVolume(75);ytPlayer.playVideo();}catch(e){}}
 }
-startMusic();
-["touchstart","pointerdown","click"].forEach(function(evt){
-  document.addEventListener(evt,startMusic,{once:true,passive:true});
-});
+function pauseMusic(){
+  wantMusic=false;
+  if(ytReady&&ytPlayer){try{ytPlayer.pauseVideo();}catch(e){}}
+}
 openInvitationBtn.addEventListener("click",function(e){
   e.preventDefault();
+  playMusic();
   coverEl.classList.add("out");
   document.body.style.overflow="";
-  if(musicEl) musicEl.play().catch(function(){});
 });
 musicBtn.addEventListener("click",function(){
-  if(musicEl.paused){musicEl.play().catch(function(){});}else{musicEl.pause();}
+  if(musicPlaying){pauseMusic();}else{playMusic();}
 });
 const target=new Date("2026-10-11T13:00:00+08:00").getTime();function tick(){let x=Math.max(0,target-Date.now());document.getElementById("d").textContent=String(Math.floor(x/86400000)).padStart(2,"0");document.getElementById("h").textContent=String(Math.floor(x%86400000/3600000)).padStart(2,"0");document.getElementById("m").textContent=String(Math.floor(x%3600000/60000)).padStart(2,"0");document.getElementById("s").textContent=String(Math.floor(x%60000/1000)).padStart(2,"0")}tick();setInterval(tick,1000);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");e.target.querySelectorAll(".gallery").forEach(x=>x.classList.add("show"));io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
