@@ -1,159 +1,32 @@
+
 <!doctype html>
 <html lang="zh-Hans">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#5b0710">
-<title>Ahlok & Asu · Wedding Invitation</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#7a0710" />
+<title>Ahlok & Asu · 10.11.2026</title>
 <style>
-:root{--red:#650812;--deep:#260206;--gold:#f6d47a;--gold2:#b97925;--cream:#fff2d0}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#180104;color:var(--cream);font-family:Georgia,"Times New Roman","Noto Serif SC",serif;overflow-x:hidden}
-body.lock{overflow:hidden}.screen{min-height:100svh;position:relative}.gold{color:var(--gold)}
-#cover{position:fixed;inset:0;z-index:50;display:grid;place-items:center;overflow:hidden;background:
-radial-gradient(circle at 50% 42%,rgba(213,111,28,.35),transparent 29%),
-linear-gradient(180deg,#7b0b16 0%,#4a050c 55%,#1f0105 100%);transition:opacity .9s,visibility .9s}
-#cover.open{opacity:0;visibility:hidden;pointer-events:none}
-.lattice{position:absolute;inset:0;opacity:.22;background-image:linear-gradient(45deg,transparent 45%,#e7b84f 46%,#e7b84f 48%,transparent 49%),linear-gradient(-45deg,transparent 45%,#e7b84f 46%,#e7b84f 48%,transparent 49%);background-size:48px 48px;mask-image:linear-gradient(90deg,#000,transparent 25%,transparent 75%,#000)}
-.vignette{position:absolute;inset:0;box-shadow:inset 0 0 120px #120003}
-.lantern{position:absolute;top:5%;width:74px;height:96px;border-radius:46%;background:radial-gradient(circle at 45% 30%,#f45d35,#a20c13 60%,#57050a);border:2px solid #d8a643;box-shadow:0 0 30px #f5a43b66;animation:sway 4s ease-in-out infinite;transform-origin:50% -25px}.lantern:before{content:"囍";position:absolute;inset:0;display:grid;place-items:center;color:#f4c55e;font-size:30px}.lantern:after{content:"";position:absolute;width:4px;height:48px;background:#c89431;left:35px;bottom:-49px}.l1{left:5%}.l2{right:5%;animation-delay:-2s}
-@keyframes sway{50%{transform:rotate(3deg)}}
-.cover-inner{position:relative;z-index:3;text-align:center;width:min(88vw,560px);padding:36px 18px}.eyebrow{letter-spacing:.35em;font-size:12px}.ring{width:245px;height:245px;margin:20px auto 8px;border:2px solid #d5a844;border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:0 0 30px #e9a82b44,inset 0 0 35px #e9a82b22}.ring:after{content:"";position:absolute;inset:9px;border:1px solid #e7c76b66;border-radius:50%}.xi{font-size:128px;line-height:1;background:linear-gradient(#fff1a8,#e4a839 45%,#fff0a1 58%,#a96916);-webkit-background-clip:text;color:transparent;text-shadow:0 5px 18px #ffb52a44;filter:drop-shadow(0 0 7px #ffd56d)}
-.names{font-size:46px;font-style:italic;color:#f8d77a;margin:10px 0 2px}.tag{letter-spacing:.2em;color:#e9c467;font-size:14px}.date{font-size:20px;letter-spacing:.3em;margin:24px 0 8px}.invite{font-size:15px;letter-spacing:.12em;line-height:1.8}
-.open-btn{margin-top:22px;padding:15px 30px;border-radius:8px;border:1px solid #f1c75f;background:linear-gradient(180deg,#b92826,#7f0b13);color:#fff2c2;font:inherit;font-size:16px;letter-spacing:.12em;box-shadow:0 0 0 4px #b57a2822,0 8px 25px #0008;cursor:pointer}.open-btn:active{transform:scale(.98)}
-.scroll-note{margin-top:22px;font-size:11px;letter-spacing:.25em;color:#d9b65f}.chev{font-size:25px;animation:bob 1.6s infinite}@keyframes bob{50%{transform:translateY(7px)}}
-#fx{position:fixed;inset:0;z-index:60;pointer-events:none}
-.music{position:fixed;right:16px;bottom:18px;z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid #f1cc70;background:#650812dd;color:#ffe79b;font-size:20px;box-shadow:0 4px 20px #0008;display:none}
-.music.show{display:block}
-.hero{min-height:100svh;background:linear-gradient(180deg,#0005,#310006bb),url("photo4.jpeg") center 28%/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:55px 22px}.hero-card{width:min(92%,620px);padding:26px 18px;border:1px solid #e7c26788;background:#39030ab8;backdrop-filter:blur(4px);box-shadow:0 18px 55px #0009}.hero h1{margin:0;font-size:40px;color:#f7d578}.hero p{line-height:1.8}
-section.content{background:linear-gradient(#fff8e9,#f4e5c7);color:#52210f;padding:72px 18px;text-align:center}.orn{color:#a81d1d;font-size:26px}.content h2{font-size:30px;margin:8px 0;color:#8d1117}.sub{letter-spacing:.2em;color:#9c6d35;font-size:12px}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:620px;margin:30px auto}.unit{padding:18px 5px;background:#fffaf0;border:1px solid #c79a4b;box-shadow:0 6px 18px #8e55251a}.num{font-size:28px;color:#99161b}.label{font-size:10px;letter-spacing:.15em;margin-top:6px}
-.gallery{max-width:760px;margin:45px auto 0;display:grid;gap:16px}.gallery img{width:100%;display:block;border:6px solid #fff9ec;box-shadow:0 10px 30px #6b351e33}.gallery img:nth-child(2),.gallery img:nth-child(4){aspect-ratio:16/10;object-fit:cover}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}.reveal.on{opacity:1;transform:none}
-.details{background:radial-gradient(circle at 50% 0,#8f141c,#4b050b 52%,#220105);padding:72px 20px;text-align:center}.card{max-width:650px;margin:auto;border:1px solid #d8aa4f;padding:34px 20px;background:#43050bbb;box-shadow:0 0 0 7px #8d541b22}.card h2{color:#f7d77b;font-size:30px}.info{font-size:18px;line-height:1.9}.map{display:inline-block;margin-top:18px;padding:13px 22px;border:1px solid #e5bf63;color:#ffe7a0;text-decoration:none;background:#7c0c14}.closing{padding:75px 20px;text-align:center;background:#170103}.closing .xi-small{font-size:70px;color:#e5b74d}.closing h2{color:#f2d17a;font-weight:normal}.closing p{color:#d7b982}
-@media(max-width:520px){.lantern{width:52px;height:70px}.lantern:after{left:24px}.xi{font-size:108px}.ring{width:210px;height:210px}.names{font-size:39px}.countdown{gap:5px}.num{font-size:23px}}
+:root{--red:#790812;--deep:#260306;--gold:#d8b56a;--paper:#f5ead7;--ink:#3b1715}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--deep);color:#fff;font-family:"Noto Serif SC","Songti SC",Georgia,serif;overflow-x:hidden}button,a{font:inherit}.serif{letter-spacing:.08em}.screen{min-height:100svh;position:relative;display:grid;place-items:center;overflow:hidden}.cover{position:fixed;inset:0;z-index:99;background:#5d0710 url('cover-chinese-cute.png') center/cover no-repeat;transition:opacity 1s,visibility 1s}.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,0,0,.03) 35%,rgba(45,0,0,.18) 66%,rgba(35,0,0,.48) 100%)}.cover.hide{opacity:0;visibility:hidden}.grain{position:absolute;inset:0;opacity:.16;background-image:radial-gradient(#f5d99a 1px,transparent 1px);background-size:23px 23px;animation:drift 18s linear infinite}@keyframes drift{to{transform:translateY(46px)}}.cover-card{text-align:center;z-index:3;padding:32px;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:max(8vh,68px)}.double-happiness{font-size:clamp(90px,28vw,170px);line-height:.85;color:var(--gold);text-shadow:0 0 28px #d8b56a55}.eyebrow{font-size:12px;letter-spacing:.45em;color:#ead6a7;margin:24px 0 8px}.names{font-size:clamp(32px,9vw,54px);margin:8px 0}.guest{margin:26px auto 18px;color:#f5e7c9}.guest strong{display:block;font-size:21px;margin-top:8px;color:#fff}.open-btn,.gold-btn{border:1px solid #e6c77e;background:linear-gradient(135deg,#d9b76b,#f0dc9c,#b98d3f);color:#4a180d;border-radius:999px;padding:13px 26px;font-weight:700;box-shadow:0 8px 30px #0005}.hero{background:linear-gradient(#0003,#0008),url('images/hero.jpg') center/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#3a050433,transparent 35%,#2b0206 100%)}.hero-content{z-index:2;text-align:center;padding:30px;text-shadow:0 3px 18px #000}.hero h1{font-size:clamp(46px,14vw,82px);margin:8px 0;color:#f7e3b2}.hero .date{font-size:17px;letter-spacing:.35em}.scroll{position:absolute;bottom:25px;z-index:3;font-size:11px;letter-spacing:.25em;opacity:.8}.paper{background:var(--paper);color:var(--ink);padding:76px 20px}.section{max-width:760px;margin:auto;text-align:center}.seal{width:58px;height:58px;border:2px solid #9c1820;color:#9c1820;display:grid;place-items:center;margin:0 auto 18px;transform:rotate(45deg);font-size:26px}.seal span{transform:rotate(-45deg)}h2{font-size:34px;margin:8px 0 12px;color:#7b0d14}.sub{opacity:.7;line-height:1.9}.moon{width:min(78vw,390px);aspect-ratio:1;border-radius:50%;margin:38px auto 25px;padding:9px;border:1px solid #b58d49;box-shadow:0 20px 50px #5d210b25;position:relative}.moon img{width:100%;height:100%;object-fit:cover;border-radius:50%}.moon:before,.moon:after{content:"✦";position:absolute;color:#a67a34;font-size:28px}.moon:before{left:-10px;top:20%}.moon:after{right:-10px;bottom:20%}.quote{font-size:20px;line-height:2;margin:32px auto;max-width:560px}.red-section{background:radial-gradient(circle at top,#9c1520,#57050b 60%,#290205);padding:80px 20px;color:#fff}.red-section h2{color:#f3d99a}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:520px;margin:30px auto}.countdown div{border:1px solid #d9b86a88;background:#23020555;padding:16px 5px;border-radius:12px}.countdown b{display:block;font-size:27px;color:#f2d58e}.countdown span{font-size:10px;letter-spacing:.1em}.event-card{max-width:560px;margin:28px auto;padding:28px 20px;border:1px solid #d8b56a88;background:#fff8;border-radius:22px;backdrop-filter:blur(10px)}.event-card h3{font-size:27px;color:#5f0910;margin:0 0 15px}.event-card p{color:#4a2220;line-height:1.7}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}.gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}.gallery img:first-child{grid-column:1/-1;aspect-ratio:16/11}.story{position:relative;margin:35px auto;max-width:560px;text-align:left}.story:before{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:1px;background:#a87e43}.story-item{padding:0 0 32px 40px;position:relative}.story-item:before{content:"";position:absolute;left:7px;top:6px;width:11px;height:11px;border-radius:50%;background:#8e1018;border:3px solid #ead4aa}.story-item b{color:#7c1017}.rsvp{background:#f1e4ce;color:#431615;padding:80px 20px}.rsvp-box{max-width:560px;margin:auto;text-align:center}.rsvp input,.rsvp select,.rsvp textarea{width:100%;margin:7px 0;padding:14px;border:1px solid #c5a97a;background:#fffaf0;border-radius:10px;color:#3b1715}.rsvp textarea{min-height:110px;resize:vertical}.ending{background:linear-gradient(#28020499,#280204dd),url('images/ending.jpg') center/cover no-repeat;text-align:center;padding:60px 24px}.ending .double-happiness{font-size:100px}.ending h2{color:#f0d18b}.music{position:fixed;right:16px;bottom:18px;z-index:50;width:46px;height:46px;border-radius:50%;border:1px solid #e5c16c;background:#5d0710dd;color:#f4d58c;display:grid;place-items:center}.petal{position:fixed;top:-30px;z-index:40;pointer-events:none;color:#f2c9a0;animation:fall linear forwards}@keyframes fall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:.1}}@media(max-width:430px){.paper,.red-section,.rsvp{padding-left:18px;padding-right:18px}.countdown b{font-size:23px}.event-card{padding:24px 16px}}
 </style>
 </head>
-<body class="lock">
-<canvas id="fx"></canvas>
-<div id="cover">
-  <div class="lattice"></div><div class="vignette"></div>
-  <div class="lantern l1"></div><div class="lantern l2"></div>
-  <div class="cover-inner">
-    <div class="eyebrow gold">THE WEDDING OF</div>
-    <div class="ring"><div class="xi">囍</div></div>
-    <div class="names">Ahlok &amp; Asu</div>
-    <div class="tag">良缘永结 · 佳偶天成</div>
-    <div class="date gold">11 · 10 · 2026</div>
-    <div class="invite">诚邀您一同见证我们的幸福时刻<br><span class="gold">YOU ARE INVITED</span></div>
-    <button class="open-btn" id="open">♥ 开启我们的喜帖<br><small>OPEN OUR INVITATION</small></button>
-    <div class="scroll-note">两颗真心 · 一生相伴<div class="chev">⌄</div></div>
-  </div>
-</div>
-
-<button class="music" id="music" aria-label="音乐">♫</button>
-<div id="player" style="position:fixed;width:1px;height:1px;left:-9999px;top:-9999px"></div>
-
-<main>
-<section class="hero screen">
-  <div class="hero-card reveal">
-    <div class="orn">囍</div>
-    <h1>Ahlok &amp; Asu</h1>
-    <p>从今以后，四季三餐，一生相伴。<br>诚挚邀请您，与我们共同见证这一刻。</p>
-    <div class="gold">11 OCTOBER 2026 · SINGKAWANG</div>
-  </div>
-</section>
-
-<section class="content">
-  <div class="reveal"><div class="orn">❦</div><div class="sub">SAVE THE DATE</div><h2>距离我们的婚礼</h2></div>
-  <div class="countdown reveal">
-    <div class="unit"><div class="num" id="d">--</div><div class="label">天 DAYS</div></div>
-    <div class="unit"><div class="num" id="h">--</div><div class="label">时 HOURS</div></div>
-    <div class="unit"><div class="num" id="m">--</div><div class="label">分 MINS</div></div>
-    <div class="unit"><div class="num" id="s">--</div><div class="label">秒 SECS</div></div>
-  </div>
-  <div class="gallery">
-    <img class="reveal" src="photo1.jpeg" alt="Ahlok and Asu">
-    <img class="reveal" src="photo2.jpeg" alt="Ahlok and Asu">
-    <img class="reveal" src="photo3.jpeg" alt="Ahlok and Asu">
-    <img class="reveal" src="photo5.jpeg" alt="Ahlok and Asu">
-  </div>
-</section>
-
-<section class="details">
-  <div class="card reveal">
-    <div class="orn gold">囍</div>
-    <div class="sub gold">WEDDING RECEPTION</div>
-    <h2>婚宴 · Gedung Paragon</h2>
-    <div class="info">
-      2026年10月11日 · 星期日<br>
-      13:00 — 15:00<br><br>
-      Jalan Tani Gg Cisadane, Singkawang<br>
-      (Depan Singkawang Grand Mall)
-    </div>
-    <a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gedung+Paragon+Jalan+Tani+Gg+Cisadane+Singkawang">开启地图导航</a>
-  </div>
-</section>
-
-<section class="closing">
-  <div class="reveal">
-    <div class="xi-small">囍</div>
-    <h2>期待与您相见</h2>
-    <p>执子之手 · 与子偕老</p>
-    <p>Ahlok &amp; Asu · 11.10.2026</p>
-  </div>
-</section>
-</main>
-
-<script src="https://www.youtube.com/iframe_api"></script>
+<body>
+<section class="cover" id="cover"><div class="grain"></div><div class="cover-card"><div class="guest" style="text-shadow:0 2px 12px #4b0000;margin:0 0 12px">敬邀<strong id="guestName">亲爱的宾客</strong></div><button class="open-btn" id="openBtn">打开请帖</button></div></section>
+<button class="music" id="musicBtn" aria-label="music">♫</button><audio id="music" loop preload="none"><source src="music/wedding.mp3" type="audio/mpeg"></audio>
+<section class="screen hero"><div class="hero-content"><div class="eyebrow">良辰已定 · 吉日待君</div><h1>Ahlok<br><span style="font-size:.5em">囍</span><br>Asu</h1><div class="date">10 · 11 · 2026</div></div><div class="scroll">向下滑动 · SCROLL</div></section>
+<section class="paper"><div class="section"><div class="seal"><span>喜</span></div><div class="eyebrow" style="color:#8b5c40">WE FOUND LOVE</div><h2>我们的婚礼</h2><p class="sub">从相遇，到相知，再到决定一起走过往后的岁月。<br>我们想把这一天，与你分享。</p><div class="moon"><img src="images/couple.jpg" alt="Ahlok & Asu"></div><div class="quote">“谨以白头之约，书向鸿笺；<br>好将红叶之盟，载明鸳谱。”</div></div></section>
+<section class="red-section"><div class="section"><div class="eyebrow">SAVE THE DATE</div><h2>距离我们的喜宴</h2><div class="countdown"><div><b id="d">00</b><span>天</span></div><div><b id="h">00</b><span>小时</span></div><div><b id="m">00</b><span>分钟</span></div><div><b id="s">00</b><span>秒</span></div></div><div class="event-card"><div style="font-size:44px;color:#8b1018">囍</div><h3>婚宴 · Wedding Reception</h3><p><b>2026年11月10日</b><br>13:00 — 15:00</p><p><b>Gedung Paragon</b><br>Jalan Tani Gg Cisadane, Singkawang<br>Depan Singkawang Grand Mall</p><a class="gold-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gedung%20Paragon%20Jalan%20Tani%20Gg%20Cisadane%20Singkawang">打开地图</a></div></div></section>
+<section class="paper"><div class="section"><div class="eyebrow" style="color:#8b5c40">OUR STORY</div><h2>从我们，到一家人</h2><div class="story"><div class="story-item"><b>相遇</b><p>世界很大，我们刚好遇见彼此。</p></div><div class="story-item"><b>相知</b><p>在平凡的日子里，慢慢成为彼此最熟悉的人。</p></div><div class="story-item"><b>相守</b><p>不是故事的结尾，而是我们决定一起生活的开始。</p></div><div class="story-item"><b>10 · 11 · 2026</b><p>我们结婚了，诚邀你来见证。</p></div></div></div></section>
+<section class="paper" style="padding-top:20px"><div class="section"><div class="eyebrow" style="color:#8b5c40">OUR GALLERY</div><h2>喜 · 影</h2><div class="gallery"><img src="images/gallery-1.jpg" alt=""><img src="images/gallery-2.jpg" alt=""><img src="images/gallery-3.jpg" alt=""><img src="images/gallery-4.jpg" alt=""><img src="images/gallery-5.jpg" alt=""></div></div></section>
+<section class="rsvp"><div class="rsvp-box"><div class="seal"><span>福</span></div><div class="eyebrow" style="color:#8b5c40">RSVP & WISHES</div><h2>出席与祝福</h2><p class="sub">你的到来，就是给我们最珍贵的祝福。</p><form id="rsvpForm"><input id="rName" required placeholder="您的姓名"><select id="attendance"><option>欣然出席</option><option>很遗憾无法出席</option><option>尚未确定</option></select><textarea id="wish" placeholder="写下给新人的祝福…"></textarea><button class="gold-btn" type="submit">通过 WhatsApp 发送</button></form></div></section>
+<section class="screen ending"><div><div class="double-happiness">囍</div><div class="eyebrow">THANK YOU</div><h2>Ahlok & Asu</h2><p style="line-height:2;color:#f3e5ca">诚邀您共同见证<br>我们人生中最重要的一天</p><div style="margin-top:25px;letter-spacing:.25em;color:#e2c176">10 · 11 · 2026</div></div></section>
 <script>
-let player, ready=false, playing=false;
-function onYouTubeIframeAPIReady(){
-  player=new YT.Player('player',{height:'1',width:'1',videoId:'AeSW8rBzbRo',
-    playerVars:{playsinline:1,controls:0,rel:0,loop:1,playlist:'AeSW8rBzbRo'},
-    events:{onReady:()=>ready=true}});
-}
-const cover=document.getElementById('cover'), music=document.getElementById('music');
-document.getElementById('open').addEventListener('click',()=>{
-  burst();
-  if(ready){player.playVideo();playing=true;music.textContent='♫'}
-  setTimeout(()=>{cover.classList.add('open');document.body.classList.remove('lock');music.classList.add('show')},450);
-});
-music.addEventListener('click',()=>{
-  if(!ready)return;
-  if(playing){player.pauseVideo();playing=false;music.textContent='♪'}else{player.playVideo();playing=true;music.textContent='♫'}
-});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
-const target=new Date('2026-10-11T13:00:00+07:00').getTime();
-function tick(){
- let x=Math.max(0,target-Date.now()),dd=Math.floor(x/86400000);x%=86400000;
- let hh=Math.floor(x/3600000);x%=3600000;let mm=Math.floor(x/60000);let ss=Math.floor(x%60000/1000);
- d.textContent=dd;h.textContent=String(hh).padStart(2,'0');m.textContent=String(mm).padStart(2,'0');s.textContent=String(ss).padStart(2,'0');
-} tick();setInterval(tick,1000);
-
-// Canvas: soft gold dust + petals
-const c=document.getElementById('fx'),ctx=c.getContext('2d');let W,H,parts=[];
-function resize(){W=c.width=innerWidth*devicePixelRatio;H=c.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
-addEventListener('resize',resize);resize();
-function make(type,bursting=false){
- return {type,x:bursting?innerWidth/2:Math.random()*innerWidth,y:bursting?innerHeight*.45:-30-Math.random()*innerHeight,
- vx:bursting?(Math.random()-.5)*9:(Math.random()-.5)*.45,vy:bursting?(Math.random()-.5)*8:0.45+Math.random()*1.05,
- r:type==='petal'?5+Math.random()*7:0.7+Math.random()*1.8,a:.35+Math.random()*.65,rot:Math.random()*6,vr:(Math.random()-.5)*.05,life:bursting?80+Math.random()*70:9999}
-}
-for(let i=0;i<45;i++)parts.push(make(i%5===0?'petal':'gold'));
-function burst(){for(let i=0;i<95;i++)parts.push(make(i%6===0?'petal':'gold',true))}
-function draw(){
- ctx.clearRect(0,0,innerWidth,innerHeight);
- if(Math.random()<.18)parts.push(make(Math.random()<.16?'petal':'gold'));
- parts.forEach(p=>{
-   p.x+=p.vx+Math.sin(p.y*.012)*.18;p.y+=p.vy;p.rot+=p.vr;p.life--;
-   ctx.save();ctx.globalAlpha=p.a;
-   if(p.type==='gold'){ctx.shadowBlur=8;ctx.shadowColor='#ffd56a';ctx.fillStyle='#ffd36a';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()}
-   else{ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle='#f5a0a2';ctx.beginPath();ctx.ellipse(0,0,p.r,p.r*.48,0,0,7);ctx.fill()}
-   ctx.restore();
- });
- parts=parts.filter(p=>p.y<innerHeight+40&&p.x>-60&&p.x<innerWidth+60&&p.life>0);
- requestAnimationFrame(draw)
-}draw();
+const q=new URLSearchParams(location.search), guest=q.get('to'); if(guest){document.getElementById('guestName').textContent=guest;document.getElementById('rName').value=guest}
+const cover=document.getElementById('cover'),music=document.getElementById('music');document.getElementById('openBtn').onclick=()=>{cover.classList.add('hide');music.play().catch(()=>{});petals()};document.getElementById('musicBtn').onclick=()=>music.paused?music.play():music.pause();
+const target=new Date('2026-11-10T13:00:00+08:00').getTime();function tick(){let x=Math.max(0,target-Date.now());d.textContent=String(Math.floor(x/86400000)).padStart(2,'0');h.textContent=String(Math.floor(x%86400000/3600000)).padStart(2,'0');m.textContent=String(Math.floor(x%3600000/60000)).padStart(2,'0');s.textContent=String(Math.floor(x%60000/1000)).padStart(2,'0')}tick();setInterval(tick,1000);
+function petals(){for(let i=0;i<22;i++)setTimeout(()=>{let e=document.createElement('i');e.className='petal';e.textContent=Math.random()>.45?'❀':'✦';e.style.left=Math.random()*100+'vw';e.style.setProperty('--x',(Math.random()*160-80)+'px');e.style.animationDuration=(7+Math.random()*7)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),15000)},i*260)}
+setInterval(()=>{if(cover.classList.contains('hide'))petals()},16000);
+document.getElementById('rsvpForm').onsubmit=e=>{e.preventDefault();let txt=`Ahlok & Asu 婚礼 RSVP%0A姓名：${encodeURIComponent(rName.value)}%0A出席：${encodeURIComponent(attendance.value)}%0A祝福：${encodeURIComponent(wish.value||'—')}`;window.open('https://wa.me/?text='+txt,'_blank')}
 </script>
-</body>
-</html>
+</body></html>
