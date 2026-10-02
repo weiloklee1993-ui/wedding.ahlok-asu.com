@@ -10,16 +10,35 @@
 .giftCard{position:relative;text-align:left;padding:28px 22px 24px;border-radius:18px;background:linear-gradient(145deg,#fffaf0,#f7e7c9);border:1px solid #d1a24f;box-shadow:0 18px 45px #71371022, inset 0 0 0 4px #fff7e7}
 .giftCard:before{content:"囍";position:absolute;right:20px;top:16px;font:42px var(--b);color:#9a121b18}.giftBank{display:inline-block;padding:5px 13px;border-radius:999px;background:#8a0b12;color:#f6d789;font-weight:700;letter-spacing:.15em;margin-bottom:22px}
 .giftLabel{font-size:12px;letter-spacing:.18em;color:#966e4a;margin-bottom:6px}.giftRow{display:flex;align-items:center;justify-content:space-between;gap:12px}.giftRow strong{font-family:var(--s);font-size:clamp(21px,6vw,31px);letter-spacing:.06em;color:#471711;word-break:break-word}.giftRow:nth-of-type(2) strong{font-size:23px}.copyBtn{flex:0 0 auto;border:1px solid #b88b46;background:#8a0b12;color:#f8dda0;border-radius:999px;padding:9px 13px;box-shadow:0 4px 12px #61101622}.copyBtn.copied{background:#b88b46;color:#fff}.giftLine{height:1px;background:linear-gradient(90deg,transparent,#c89b52,transparent);margin:20px 0}.giftThanks{font:24px var(--b);color:#8a0b12;margin-top:22px}
-</style></head><body>
+.gallery.show img:nth-child(6){transition-delay:.60s}.gallery.show img:nth-child(7){transition-delay:.72s}.gallery.show img:nth-child(8){transition-delay:.84s}</style><style>
+.wishSection{padding-top:80px;padding-bottom:90px}
+.wishWrap{width:min(92%,720px);margin:auto}
+.wishWrap>p{margin-bottom:22px}
+#wishForm{display:grid;gap:12px}
+#wishForm input,#wishForm textarea{width:100%;box-sizing:border-box}
+#wishForm textarea{min-height:120px;resize:vertical}
+.wishStatus{min-height:22px;margin:4px 0 10px;font-size:13px;color:#8d1d20;text-align:center}
+.wishList{display:grid;gap:14px;margin-top:28px;text-align:left}
+.wishCard{position:relative;padding:18px 18px 16px;border:1px solid rgba(177,125,33,.38);background:linear-gradient(145deg,rgba(255,253,245,.96),rgba(255,246,224,.92));box-shadow:0 8px 24px rgba(80,22,18,.08);border-radius:14px;overflow:hidden}
+.wishCard:after{content:"囍";position:absolute;right:12px;top:4px;font:52px var(--b);color:rgba(173,31,35,.06)}
+.wishName{font-weight:800;color:#9b2024;margin-bottom:7px;letter-spacing:.06em}
+.wishMessage{position:relative;z-index:1;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;color:#5b443d}
+.wishTime{margin-top:9px;font-size:11px;color:#a58a76}
+.wishLoading,.wishEmpty{text-align:center;color:#9a8170;padding:18px}
+</style>
+</head><body>
 <section class="cover" id="cover"><img class="poster" src="cover-poster.jpg"><video id="cv" autoplay muted loop playsinline preload="auto" poster="cover-poster.jpg"><source src="cover-animation.mp4" type="video/mp4"></video><div class="shade"></div><div class="invite"><div class="mini">敬 邀</div><div class="guest" id="guest">亲爱的宾客</div><div class="welcome">莅临我们的婚礼</div><button class="open" id="openInvitationBtn"><i></i>打开请帖 ›</button></div></section>
-<button class="music" id="mb" aria-label="音乐">♫</button><div id="ytWrap" aria-hidden="true" style="position:fixed;width:1px;height:1px;left:-9999px;top:-9999px;overflow:hidden">
-<div id="ytPlayer"></div></div>
-<script src="https://www.youtube.com/iframe_api"></script>
+<button class="music" id="mb" aria-label="音乐">♫</button><audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
 <section class="screen hero"><div><div class="ey">良辰已定 · 吉日待君</div><h1>Ahlok<br><small>囍</small><br>Asu</h1><div class="date">11 · 10 · 2026</div></div></section>
 <section class="paper"><div class="sec reveal"><div class="seal"><span>喜</span></div><div class="ey" style="color:#8a5b3e;margin-top:22px">WE FOUND LOVE</div><h2>我们的婚礼</h2><p class="sub">从相遇，到相知，再到决定一起走过往后的岁月。<br>我们想把这一天，与你分享。</p><img class="feature" src="photo2.jpeg" loading="lazy"><div class="quote">谨以白头之约，书向鸿笺<br>好将红叶之盟，载明鸳谱</div></div></section>
 <section class="red"><div class="sec reveal"><div class="ey">SAVE THE DATE</div><h2>距离我们的喜宴</h2><div class="count"><div><b id="d">00</b><span>天</span></div><div><b id="h">00</b><span>小时</span></div><div><b id="m">00</b><span>分钟</span></div><div><b id="s">00</b><span>秒</span></div></div><div class="card"><h3>婚宴</h3><p><b>2026年10月11日</b><br>13:00 — 15:00</p><p><b>Gedung Paragon</b><br>Jalan Tani Gg Cisadane, Singkawang<br>Depan Singkawang Grand Mall</p><a class="gold" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gedung%20Paragon%20Jalan%20Tani%20Gg%20Cisadane%20Singkawang">打开地图</a></div></div></section>
 <section class="paper"><div class="sec reveal"><div class="ey" style="color:#8a5b3e">OUR STORY</div><h2>从我们，到一家人</h2><div class="story"><div><b>相遇</b><p>世界很大，我们刚好遇见彼此。</p></div><div><b>相知</b><p>在平凡的日子里，慢慢成为彼此最熟悉的人。</p></div><div><b>相守</b><p>不是故事的结尾，而是我们决定一起生活的开始。</p></div><div><b>11 · 10 · 2026</b><p>我们结婚了，诚邀你来见证。</p></div></div></div></section>
-<section class="paper"><div class="sec reveal"><div class="ey" style="color:#8a5b3e">OUR GALLERY</div><h2>喜 · 影</h2><div class="gallery"><img src="photo1.jpeg" loading="lazy"><img src="photo2.jpeg" loading="lazy"><img src="photo3.jpeg" loading="lazy"><img src="photo4.jpeg" loading="lazy"><img src="photo5.jpeg" loading="lazy"></div></div></section>
+<section class="paper"><div class="sec reveal"><div class="ey" style="color:#8a5b3e">OUR GALLERY</div><h2>喜 · 影</h2><div class="gallery">
+<img src="photo1.jpeg" loading="lazy"><img src="photo6.jpeg" loading="lazy">
+<img src="photo2.jpeg" loading="lazy"><img src="photo7.jpeg" loading="lazy">
+<img src="photo3.jpeg" loading="lazy"><img src="photo4.jpeg" loading="lazy">
+<img src="photo8.jpeg" loading="lazy"><img src="photo5.jpeg" loading="lazy">
+</div></div></section>
 
 <section class="giftSection">
   <div class="giftWrap reveal">
@@ -37,7 +56,21 @@
     <div class="giftThanks">囍 · 感谢您的祝福 · 囍</div>
   </div>
 </section>
-<section class="rsvp"><form class="reveal" id="form"><div class="seal"><span>福</span></div><h2>出席与祝福</h2><p>你的到来，就是给我们最珍贵的祝福。</p><input id="rn" required placeholder="您的姓名"><select id="att"><option>欣然出席</option><option>很遗憾无法出席</option><option>尚未确定</option></select><textarea id="wish" placeholder="写下给新人的祝福…"></textarea><button class="gold">通过 WhatsApp 发送</button></form></section>
+<section class="rsvp wishSection">
+<div class="reveal wishWrap">
+  <div class="seal"><span>福</span></div>
+  <div class="ey">WEDDING WISHES</div>
+  <h2>囍 · 宾客祝福墙</h2>
+  <p>留下您的祝福，与我们一起珍藏这份喜悦。</p>
+  <form id="wishForm">
+    <input id="rn" required maxlength="30" placeholder="您的姓名">
+    <textarea id="wish" required maxlength="300" placeholder="写下给 Ahlok & Asu 的祝福…"></textarea>
+    <button class="gold" id="wishSubmit" type="submit">送上祝福</button>
+    <div id="wishStatus" class="wishStatus" aria-live="polite"></div>
+  </form>
+  <div id="wishList" class="wishList"><div class="wishLoading">正在载入大家的祝福…</div></div>
+</div>
+</section>
 <section class="screen ending"><div class="reveal"><div style="font:100px var(--b);color:#f0cb70">囍</div><div class="ey">THANK YOU</div><h2 style="color:#f0cb70">Ahlok & Asu</h2><p>诚邀您共同见证<br>我们人生中最重要的一天</p><div>11 · 10 · 2026</div></div></section>
 <script>
 const q=new URLSearchParams(window.location.search),n=q.get("to");
@@ -46,40 +79,35 @@ if(n){guestEl.textContent=n;rnEl.value=n}
 for(let i=0;i<15;i++){let p=document.createElement("i");p.className="petal";p.textContent=Math.random()>.5?"❀":"✦";p.style.left=Math.random()*100+"vw";p.style.setProperty("--x",(Math.random()*140-70)+"px");p.style.animationDuration=(7+Math.random()*6)+"s";p.style.animationDelay=(-Math.random()*8)+"s";document.body.appendChild(p)}
 const coverEl=document.getElementById("cover");
 const openInvitationBtn=document.getElementById("openInvitationBtn");
+const musicEl=document.getElementById("music");
 const musicBtn=document.getElementById("mb");
-let ytPlayer=null, ytReady=false, wantMusic=false, musicPlaying=false;
-window.onYouTubeIframeAPIReady=function(){
-  ytPlayer=new YT.Player("ytPlayer",{
-    height:"1",width:"1",videoId:"AeSW8rBzbRo",
-    playerVars:{playsinline:1,controls:0,rel:0,loop:1,playlist:"AeSW8rBzbRo"},
-    events:{onReady:function(){ytReady=true;if(wantMusic) playMusic();},
-            onStateChange:function(e){musicPlaying=(e.data===YT.PlayerState.PLAYING);musicBtn.textContent=musicPlaying?"♪":"♫";}}
-  });
-};
-function playMusic(){
-  wantMusic=true;
-  if(ytReady&&ytPlayer){try{ytPlayer.unMute();ytPlayer.setVolume(75);ytPlayer.playVideo();}catch(e){}}
+musicEl.volume=0.78;
+function startMusic(){
+  const p=musicEl.play();
+  if(p&&p.catch){p.catch(function(){});}
 }
-function pauseMusic(){
-  wantMusic=false;
-  if(ytReady&&ytPlayer){try{ytPlayer.pauseVideo();}catch(e){}}
-}
+function pauseMusic(){musicEl.pause();}
+musicEl.addEventListener("play",function(){musicBtn.textContent="♪";});
+musicEl.addEventListener("pause",function(){musicBtn.textContent="♫";});
+
+// Try immediately. Browsers that permit autoplay will start on the cover.
+startMusic();
+// If autoplay is blocked, the first touch anywhere on the cover starts it.
+["touchstart","pointerdown","click"].forEach(function(evt){
+  coverEl.addEventListener(evt,startMusic,{once:true,passive:true});
+});
 openInvitationBtn.addEventListener("click",function(e){
   e.preventDefault();
-  playMusic();
+  startMusic();
   coverEl.classList.add("out");
   document.body.style.overflow="";
 });
-musicBtn.addEventListener("click",function(){
-  if(musicPlaying){pauseMusic();}else{playMusic();}
+musicBtn.addEventListener("click",function(e){
+  e.stopPropagation();
+  if(musicEl.paused){startMusic();}else{pauseMusic();}
 });
 const target=new Date("2026-10-11T13:00:00+08:00").getTime();function tick(){let x=Math.max(0,target-Date.now());document.getElementById("d").textContent=String(Math.floor(x/86400000)).padStart(2,"0");document.getElementById("h").textContent=String(Math.floor(x%86400000/3600000)).padStart(2,"0");document.getElementById("m").textContent=String(Math.floor(x%3600000/60000)).padStart(2,"0");document.getElementById("s").textContent=String(Math.floor(x%60000/1000)).padStart(2,"0")}tick();setInterval(tick,1000);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");e.target.querySelectorAll(".gallery").forEach(x=>x.classList.add("show"));io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll(".reveal").forEach(x=>io.observe(x));
-document.getElementById("form").addEventListener("submit",function(e){e.preventDefault();
-const name=document.getElementById("rn").value,attendance=document.getElementById("att").value,wishText=document.getElementById("wish").value||"—";
-const t=`Ahlok & Asu 婚礼 RSVP%0A姓名：${encodeURIComponent(name)}%0A出席：${encodeURIComponent(attendance)}%0A祝福：${encodeURIComponent(wishText)}`;
-window.open("https://wa.me/?text="+t,"_blank");
-});
 
 document.querySelectorAll(".copyBtn").forEach(function(btn){
  btn.addEventListener("click",function(){
@@ -90,4 +118,72 @@ document.querySelectorAll(".copyBtn").forEach(function(btn){
  });
 });
 function fallbackCopy(val,done){const t=document.createElement("textarea");t.value=val;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");done()}catch(e){}document.body.removeChild(t)}
-</script></body></html>
+</script><script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD7HUNSud51BVsbaSDPhtdQ-tTzjbcS6E0",
+  authDomain: "ahlok-asu-wedding.firebaseapp.com",
+  projectId: "ahlok-asu-wedding",
+  storageBucket: "ahlok-asu-wedding.firebasestorage.app",
+  messagingSenderId: "95639080057",
+  appId: "1:95639080057:web:2835e8e49f81b5dba918a8",
+  measurementId: "G-6R76TGDTR9"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const wishesRef = collection(db, "wishes");
+const form = document.getElementById("wishForm");
+const nameInput = document.getElementById("rn");
+const messageInput = document.getElementById("wish");
+const list = document.getElementById("wishList");
+const status = document.getElementById("wishStatus");
+const submit = document.getElementById("wishSubmit");
+
+function escapeHTML(s){
+  return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+function formatTime(ts){
+  if(!ts || !ts.toDate) return "刚刚";
+  return new Intl.DateTimeFormat("zh-CN",{month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(ts.toDate());
+}
+
+const wishesQuery = query(wishesRef, orderBy("createdAt","desc"));
+onSnapshot(wishesQuery, snap => {
+  if(snap.empty){
+    list.innerHTML='<div class="wishEmpty">还没有祝福，欢迎成为第一位留言的宾客 ❤️</div>';
+    return;
+  }
+  list.innerHTML=snap.docs.map(d=>{
+    const x=d.data();
+    return `<article class="wishCard"><div class="wishName">${escapeHTML(x.name||"宾客")}</div><div class="wishMessage">${escapeHTML(x.message||"")}</div><div class="wishTime">${formatTime(x.createdAt)}</div></article>`;
+  }).join("");
+}, err => {
+  console.error(err);
+  list.innerHTML='<div class="wishEmpty">祝福暂时无法载入，请稍后再试。</div>';
+});
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+  const name=nameInput.value.trim();
+  const message=messageInput.value.trim();
+  if(!name || !message) return;
+  submit.disabled=true;
+  submit.textContent="正在送上祝福…";
+  status.textContent="";
+  try{
+    await addDoc(wishesRef,{name,message,createdAt:serverTimestamp()});
+    messageInput.value="";
+    status.textContent="❤️ 谢谢您的祝福，我们已经收到啦！";
+  }catch(err){
+    console.error(err);
+    status.textContent="发送失败，请稍后再试。";
+  }finally{
+    submit.disabled=false;
+    submit.textContent="送上祝福";
+  }
+});
+</script>
+</body></html>
