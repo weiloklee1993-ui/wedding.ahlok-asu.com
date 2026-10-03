@@ -42,7 +42,69 @@
 .wishTime{margin-top:9px;font-size:11px;color:#a58a76}
 .wishLoading,.wishEmpty{text-align:center;color:#9a8170;padding:18px}
 </style>
+
+<style id="motionUpgrade">
+/* ===== 明显照片动态 ===== */
+.gallery img{
+  opacity:0;
+  will-change:transform,opacity,filter;
+  transform:translate3d(0,90px,0) rotate(-4deg) scale(.82);
+  filter:blur(7px);
+}
+.gallery.show img{
+  animation:photoPop 1.05s cubic-bezier(.2,.95,.25,1.25) forwards;
+}
+.gallery.show img:nth-child(even){
+  transform:translate3d(70px,50px,0) rotate(5deg) scale(.82);
+}
+.gallery.show img:nth-child(1){animation-delay:.05s}
+.gallery.show img:nth-child(2){animation-delay:.18s}
+.gallery.show img:nth-child(3){animation-delay:.31s}
+.gallery.show img:nth-child(4){animation-delay:.44s}
+.gallery.show img:nth-child(5){animation-delay:.57s}
+.gallery.show img:nth-child(6){animation-delay:.70s}
+.gallery.show img:nth-child(7){animation-delay:.83s}
+.gallery.show img:nth-child(8){animation-delay:.96s}
+@keyframes photoPop{
+  0%{opacity:0;transform:translate3d(0,95px,0) rotate(-5deg) scale(.78);filter:blur(8px)}
+  68%{opacity:1;transform:translate3d(0,-12px,0) rotate(1.2deg) scale(1.035);filter:blur(0)}
+  84%{transform:translate3d(0,5px,0) rotate(-.5deg) scale(.99)}
+  100%{opacity:1;transform:translate3d(0,0,0) rotate(0) scale(1);filter:blur(0)}
+}
+
+/* ===== 全页面金粉 + 花瓣层 ===== */
+#celebrationFX{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9998}
+.fxPetal,.fxGold{position:absolute;top:-12vh;will-change:transform,opacity}
+.fxPetal{
+  width:12px;height:18px;border-radius:80% 20% 70% 30%;
+  background:linear-gradient(135deg,#ffd4dc,#f49baa);
+  box-shadow:0 0 8px rgba(255,205,211,.45);
+  opacity:.78;
+  animation:petalFall linear forwards;
+}
+.fxGold{
+  width:5px;height:5px;border-radius:50%;
+  background:#ffd76a;
+  box-shadow:0 0 8px #ffca43,0 0 14px rgba(255,210,95,.7);
+  opacity:.9;
+  animation:goldFall linear forwards;
+}
+@keyframes petalFall{
+  0%{transform:translate3d(0,-10vh,0) rotate(0deg);opacity:0}
+  8%{opacity:.85}
+  100%{transform:translate3d(var(--drift),115vh,0) rotate(var(--spin));opacity:.15}
+}
+@keyframes goldFall{
+  0%{transform:translate3d(0,-8vh,0) scale(.4);opacity:0}
+  10%{opacity:1}
+  50%{transform:translate3d(var(--drift),55vh,0) scale(1.3);opacity:.95}
+  100%{transform:translate3d(calc(var(--drift) * -.4),112vh,0) scale(.45);opacity:0}
+}
+</style>
+
 </head><body>
+<div id="celebrationFX" aria-hidden="true"></div>
+
 <section class="cover" id="cover"><img class="poster" src="cover-poster.jpg"><video id="cv" autoplay muted loop playsinline preload="auto" poster="cover-poster.jpg"><source src="cover-animation.mp4" type="video/mp4"></video><div class="shade"></div><div class="invite"><div class="mini">敬 邀</div><div class="guest" id="guest">亲爱的宾客</div><div class="welcome">莅临我们的婚礼</div><button class="open" id="openInvitationBtn"><i></i>打开请帖 ›</button></div></section>
 <button class="music" id="mb" aria-label="音乐">♫</button><audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
 <section class="screen hero"><div><div class="ey">良辰已定 · 吉日待君</div><h1>Ahlok<br><small>囍</small><br>Asu</h1><div class="date">11 · 10 · 2026</div></div></section>
@@ -202,4 +264,46 @@ form.addEventListener("submit", async e => {
   }
 });
 </script>
+
+<script>
+(function(){
+  const layer=document.getElementById("celebrationFX");
+  if(!layer) return;
+
+  function spawn(kind){
+    const e=document.createElement("i");
+    e.className=kind==="petal"?"fxPetal":"fxGold";
+    e.style.left=(Math.random()*100)+"vw";
+    e.style.setProperty("--drift",((Math.random()*160)-80)+"px");
+    e.style.setProperty("--spin",((Math.random()*900)+360)+"deg");
+    const dur=kind==="petal" ? 7+Math.random()*6 : 5+Math.random()*5;
+    e.style.animationDuration=dur+"s";
+    if(kind==="petal"){
+      const s=.65+Math.random()*.85;
+      e.style.transform="scale("+s+")";
+    }
+    layer.appendChild(e);
+    setTimeout(()=>e.remove(),(dur+.5)*1000);
+  }
+
+  // 开场立即有一批，不必等滚动。
+  for(let i=0;i<16;i++) setTimeout(()=>spawn(i%3===0?"petal":"gold"),i*90);
+  setInterval(()=>spawn(Math.random()<.42?"petal":"gold"),280);
+
+  // iOS/Safari 上确保 Gallery 进入视窗时真正触发。
+  const galleries=document.querySelectorAll(".gallery");
+  const gio=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.remove("show");
+        void entry.target.offsetWidth;
+        entry.target.classList.add("show");
+        gio.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08,rootMargin:"0px 0px -5% 0px"});
+  galleries.forEach(g=>gio.observe(g));
+})();
+</script>
+
 </body></html>
